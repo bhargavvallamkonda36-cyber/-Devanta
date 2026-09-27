@@ -1,0 +1,19 @@
+:root {
+  --devanta-sidebar-width: 280px;
+  --devanta-blue: #315cff;
+  --devanta-purple: #654cff;
+  --devanta-text: #172033;
+  --devanta-text-soft: #69768c;
+  --devanta-bg: #f7f8fb;
+  --devanta-white: #ffffff;
+  --devanta-border: #e5e9f0;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { width: 100%; min-height: 100%; margin: 0; padding: 0; }
+html { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--devanta-bg); }
+body { min-width: 320px; min-height: 100vh; background: var(--devanta-bg); color: var(--devanta-text); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; overflow-x: hidden; }
+button, input, textarea, select { font-family: inherit; }
+button { border: 0; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }

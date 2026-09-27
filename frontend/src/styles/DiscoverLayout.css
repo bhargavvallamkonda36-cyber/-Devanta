@@ -1,0 +1,283 @@
+/* =========================================================
+   DEVANTA DISCOVER LAYOUT
+   Used by Tags, People and TagPage
+   ========================================================= */
+
+:root {
+  --devanta-sidebar-width: 300px;
+  --devanta-blue: #315cff;
+  --devanta-purple: #654cff;
+  --devanta-dark: #172033;
+  --devanta-muted: #718099;
+  --devanta-bg: #f7f8fb;
+  --devanta-border: #e2e7f0;
+}
+
+.discover-layout {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--devanta-bg);
+  overflow-x: hidden;
+}
+
+.discover-main {
+  width: calc(100% - var(--devanta-sidebar-width));
+  min-width: 0;
+  min-height: 100vh;
+  margin-left: var(--devanta-sidebar-width);
+  background: var(--devanta-bg);
+  overflow-x: hidden;
+}
+
+.discover-top-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 36px;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--devanta-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.discover-header-spacer {
+  flex: 1;
+}
+
+.discover-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.discover-header-write {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 12px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--devanta-blue), var(--devanta-purple));
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(49, 92, 255, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.discover-header-write:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(49, 92, 255, 0.28);
+}
+
+.discover-header-user {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--devanta-dark);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.discover-header-user strong {
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.discover-header-avatar {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  background: linear-gradient(135deg, var(--devanta-blue), var(--devanta-purple));
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.discover-page {
+  width: 100%;
+  min-width: 0;
+}
+
+.discover-hero {
+  width: 100%;
+  padding: 34px 36px 28px;
+}
+
+.discover-hero-inner {
+  width: 100%;
+  min-width: 0;
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 46px;
+  border: 1px solid var(--devanta-border);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 88% 18%, rgba(101, 76, 255, 0.12), transparent 34%),
+    radial-gradient(circle at 65% 100%, rgba(49, 92, 255, 0.08), transparent 38%),
+    #fff;
+  overflow: hidden;
+}
+
+.discover-eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--devanta-blue);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.discover-hero h1 {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  color: var(--devanta-dark);
+  font-size: clamp(38px, 4vw, 58px);
+  line-height: 1.08;
+  letter-spacing: -1.8px;
+  font-weight: 900;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.discover-hero p {
+  width: 100%;
+  max-width: 900px;
+  margin: 17px 0 0;
+  color: var(--devanta-muted);
+  font-size: 17px;
+  line-height: 1.7;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.discover-content {
+  width: 100%;
+  min-width: 0;
+  padding: 0 36px 60px;
+  overflow: visible;
+}
+
+.discover-content * {
+  box-sizing: border-box;
+}
+
+@media (max-width: 1100px) {
+  :root {
+    --devanta-sidebar-width: 270px;
+  }
+
+  .discover-top-header {
+    padding: 0 28px;
+  }
+
+  .discover-hero {
+    padding: 28px;
+  }
+
+  .discover-content {
+    padding: 0 28px 50px;
+  }
+
+  .discover-hero-inner {
+    padding: 36px;
+  }
+}
+
+@media (max-width: 899px) {
+  :root { --devanta-sidebar-width: 0px; }
+
+  .discover-main {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .discover-top-header {
+    min-height: 70px;
+    padding: 0 20px;
+  }
+
+  .discover-hero {
+    padding: 22px 20px;
+  }
+
+  .discover-content {
+    padding: 0 20px 40px;
+  }
+
+  .discover-hero-inner {
+    min-height: 200px;
+    padding: 30px;
+    border-radius: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .discover-top-header {
+    padding: 0 14px;
+  }
+
+  .discover-header-actions {
+    gap: 10px;
+  }
+
+  .discover-header-write {
+    min-height: 42px;
+    padding: 0 13px;
+  }
+
+  .discover-header-write span,
+  .discover-header-user strong {
+    display: none;
+  }
+
+  .discover-header-avatar {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+  }
+
+  .discover-hero {
+    padding: 14px;
+  }
+
+  .discover-content {
+    padding: 0 14px 30px;
+  }
+
+  .discover-hero-inner {
+    min-height: 175px;
+    padding: 25px 22px;
+    border-radius: 20px;
+  }
+
+  .discover-eyebrow {
+    font-size: 11px;
+  }
+
+  .discover-hero h1 {
+    font-size: 34px;
+    letter-spacing: -1px;
+  }
+
+  .discover-hero p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
