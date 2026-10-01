@@ -1,7 +1,7 @@
-const API_BASE_URL = "http://127.0.0.1:8000";
+import { API_URL } from "../config";
 
 export const registerUser = async (userData) => {
-  const response = await fetch(`${API_BASE_URL}/auth/register`, {
+  const response = await fetch(`${API_URL}/auth/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -25,7 +25,7 @@ export const loginUser = async (username, password) => {
   formData.append("username", username);
   formData.append("password", password);
 
-  const response = await fetch(`${API_BASE_URL}/auth/login`, {
+  const response = await fetch(`${API_URL}/auth/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
@@ -48,4 +48,5 @@ export const getToken = () => {
 
 export const logoutUser = () => {
   localStorage.removeItem("devanta_token");
+  localStorage.removeItem("devanta_username");
 };
