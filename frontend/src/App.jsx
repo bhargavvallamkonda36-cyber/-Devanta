@@ -25,13 +25,6 @@ import Settings from "./pages/Settings";
 import "./App.css";
 
 /* =====================================================
-   API
-===================================================== */
-
-export const API_URL = "http://127.0.0.1:8000";
-
-
-/* =====================================================
    PROTECTED ROUTE
 ===================================================== */
 
@@ -39,17 +32,11 @@ function ProtectedRoute({ children }) {
   const token = localStorage.getItem("devanta_token");
 
   if (!token) {
-    return (
-      <Navigate
-        to="/login"
-        replace
-      />
-    );
+    return <Navigate to="/login" replace />;
   }
 
   return children;
 }
-
 
 /* =====================================================
    PUBLIC ONLY ROUTE
@@ -62,17 +49,11 @@ function PublicOnlyRoute({ children }) {
   const token = localStorage.getItem("devanta_token");
 
   if (token) {
-    return (
-      <Navigate
-        to="/"
-        replace
-      />
-    );
+    return <Navigate to="/" replace />;
   }
 
   return children;
 }
-
 
 /* =====================================================
    SCROLL TO TOP
@@ -92,7 +73,6 @@ function ScrollToTop() {
   return null;
 }
 
-
 /* =====================================================
    APP
 ===================================================== */
@@ -103,15 +83,11 @@ export default function App() {
       <ScrollToTop />
 
       <Routes>
-
         {/* =================================================
             PUBLIC ROUTES
         ================================================= */}
 
-        <Route
-          path="/"
-          element={<Home />}
-        />
+        <Route path="/" element={<Home />} />
 
         <Route
           path="/explore"
@@ -143,7 +119,6 @@ export default function App() {
           element={<Profile />}
         />
 
-
         {/* =================================================
             AUTH ROUTES
         ================================================= */}
@@ -165,7 +140,6 @@ export default function App() {
             </PublicOnlyRoute>
           }
         />
-
 
         {/* =================================================
             DASHBOARD / MY POSTS
@@ -189,7 +163,6 @@ export default function App() {
           }
         />
 
-
         {/* =================================================
             BOOKMARKS
         ================================================= */}
@@ -202,7 +175,6 @@ export default function App() {
             </ProtectedRoute>
           }
         />
-
 
         {/* =================================================
             WRITE / EDITOR
@@ -235,7 +207,6 @@ export default function App() {
           }
         />
 
-
         {/* =================================================
             PROFILE
         ================================================= */}
@@ -258,7 +229,6 @@ export default function App() {
           }
         />
 
-
         {/* =================================================
             SETTINGS
         ================================================= */}
@@ -271,7 +241,6 @@ export default function App() {
             </ProtectedRoute>
           }
         />
-
 
         {/* =================================================
             FALLBACK
@@ -286,7 +255,6 @@ export default function App() {
             />
           }
         />
-
       </Routes>
     </BrowserRouter>
   );

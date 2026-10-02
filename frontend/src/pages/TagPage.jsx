@@ -24,7 +24,8 @@ import DiscoverLayout from "../DiscoverLayout";
 
 import "../styles/TagPage.css";
 
-const API_URL = "http://127.0.0.1:8000";
+import { API_URL } from "../config";
+
 
 export default function TagPage() {
   const { slug } = useParams();

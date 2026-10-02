@@ -10,7 +10,7 @@ import {
 import { Link } from "react-router-dom";
 
 import DevantaSidebar from "../components/DevantaSidebar";
-import { API_URL } from "../App";
+import { API_URL } from "../config";
 
 import "../styles/Home.css";
 

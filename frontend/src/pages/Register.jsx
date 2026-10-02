@@ -11,7 +11,7 @@ import {
   UserRound,
 } from "lucide-react";
 
-import { API_URL } from "../App";
+import { API_URL } from "../config";
 
 import "../styles/Register.css";
 
